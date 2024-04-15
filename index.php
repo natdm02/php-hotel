@@ -48,24 +48,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--bootstrap/-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>php-hotel</title>
 </head>
 <body>
-
-    <div>
-        <ul>
+  <main class="col-10 m-auto p-4">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Nome Hotel</th>
+                <th scope="col">Descrizione</th>
+                <th scope="col">Parcheggio</th>
+                <th scope="col">Voto</th>
+                <th scope="col">Distanza dal centro</th>
+            </tr>
+        </thead>
+    <tbody>
+        <tr>
             <?php foreach($hotels as $hotel) { ?>
-            <li>
-                <h4><?php echo $hotel['name']; ?><!--hotel/--></h4>
-                <div><?php echo $hotel['description']; ?><!--description/--></div>
-                <div><?php echo $hotel['parking'] ? 'Sì' : 'No'; ?><!--parcking/--></div>
-                <div><?php echo $hotel['vote']; ?><!--vote/--></div>
-                <div><?php echo $hotel['distance_to_center']; ?><!--distance/--></div>
-            </li>
+                <td><?php echo $hotel['name']; ?></td>
+                <td><?php echo $hotel['description']; ?></td>
+                <td><div><?php echo $hotel['parking'] === true ? 'Sì' : 'No'; ?></div></td>
+                <td><div><?php echo $hotel['vote']; ?></div></td>
+                <td><div><?php echo $hotel['distance_to_center']; ?> km</div></td>
+        </tr>
             <?php } ?>
-        </ul>
-    </div>
+    </tbody>
+    </table>
+  </main>
 
 
 </body>
