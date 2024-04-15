@@ -1,0 +1,39 @@
+body {
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  background-color: rgba(177, 159, 159, 0.8); 
+}
+
+.main-container {
+  width: 80%; 
+  margin: auto; 
+  padding: 20px; 
+}
+
+.table {
+  width: 100%; 
+  border-collapse: collapse; 
+}
+
+.table th,
+.table td {
+  padding: 10px; 
+  text-align: left; 
+}
+
+.thead-dark {
+  background-color: #383f47; 
+  color: white; 
+}
+
+/* righe dispri */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #d5dde5; 
+}
+
+.table-striped tbody tr:hover {
+  background-color: #d5dde5; 
+}
+
+.table td div {
+  padding: 5px; 
+}
