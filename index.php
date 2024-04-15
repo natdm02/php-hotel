@@ -55,13 +55,15 @@
 
     <div>
         <ul>
+            <?php foreach($hotels as $hotel) { ?>
             <li>
-                <h4>hotel</h4>
-                <div>description</div>
-                <div>parcking</div>
-                <div>vote</div>
-                <div>distance</div>
+                <h4><?php echo $hotel['name']; ?><!--hotel/--></h4>
+                <div><?php echo $hotel['description']; ?><!--description/--></div>
+                <div><?php echo $hotel['parcking']; ?><!--parcking/--></div>
+                <div><?php echo $hotel['vote']; ?><!--vote/--></div>
+                <div><?php echo $hotel['distance_to_center']; ?><!--distance/--></div>
             </li>
+            <?php } ?>
         </ul>
     </div>
 
