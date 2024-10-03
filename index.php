@@ -39,4 +39,13 @@
         ],
 
     ];
+
+    foreach ($hotels as $hotel) {
+        echo "nome: " . $hotel['name'] . "<br>";
+        echo "descrizione: " . $hotel['description'] . "<br>";
+        echo "parcheggio: " . ($hotel['parking'] ? 'si' : 'no') . "<br>";
+        echo "voto: " . $hotel['vote'] . "<br>";
+        echo "distanza dal centro: " . $hotel['distance_to_center'] . " km<br><br>";
+    }
+    
 ?>
