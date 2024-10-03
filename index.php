@@ -40,6 +40,8 @@
 
     ];
 
+    $Filter = isset($_GET['parking']) && $_GET['parking'] == '1';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,28 +54,35 @@
 </head>
 
 <body>
-    <header>
-    <div class="bg-dark text-white p-3">
-        <div class="container">
-            <h1 class="text-center"> LISTA DEGLI HOTEL</h1>
-        </div>
-    </div>
-    </header>
-
-    <main>
+    
+<main>
     <div class="container my-5">
+        
+        <form method="GET" class="mb-4">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="parking" name="parking" value="1" <?php if ($Filter) echo 'checked'; ?>>
+                <label class="form-check-label" for="parking">hotel con parcheggio</label>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">filtra</button>
+        </form>
+
+        
         <table class="table table-bordered">
-            
             <tr>
-                <th>nome</th>
-                <th>descrizione</th>
-                <th>parcheggio</th>
-                <th>voto</th>
-                <th>km</th>
+                <th>name</th>
+                <th>description</th>
+                <th>parking</th>
+                <th>rating</th>
+                <th>Km</th>
             </tr>
 
             
-            <?php foreach ($hotels as $hotel) { ?>
+            <?php foreach ($hotels as $hotel) {
+                
+                if ($Filter && !$hotel['parking']) {
+                    continue;
+                }
+            ?>
                 <tr>
                     <td><?php echo $hotel['name']; ?></td>
                     <td><?php echo $hotel['description']; ?></td>
@@ -84,13 +93,7 @@
             <?php } ?>
         </table>
     </div>
-
-    </main>
-    
-
-    <footer>
-            F
-    </footer>
+</main>
 </body>
 </html>
 
