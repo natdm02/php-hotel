@@ -53,14 +53,15 @@
 
 <body>
     <header>
-        H
+    <div class="bg-dark text-white p-3">
+        <div class="container">
+            <h1 class="text-center"> LISTA DEGLI HOTEL</h1>
+        </div>
+    </div>
     </header>
-\
+
     <main>
     <div class="container my-5">
-        <div class="mb-4">
-            <h2>HOTEL</h2>
-        </div>
         <table class="table table-bordered">
             
             <tr>
@@ -88,7 +89,7 @@
     
 
     <footer>
-
+            F
     </footer>
 </body>
 </html>
